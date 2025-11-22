@@ -7,14 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tanuja Suvarnakar - Java Backend Developer Portfolio</title>
     
-    <!-- FIXED: Updated FontAwesome CDN to ensure icons load -->
+    <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 
     <style>
-        /* CSS for the Social Icons */
+        /* --- CSS for Home Section Social Icons --- */
         .social-icons {
             display: flex;
             gap: 20px;
@@ -43,18 +44,28 @@
             background: #0ef;
             color: #1f242d;
             box-shadow: 0 0 20px #0ef;
+            transform: translateY(-5px);
         }
 
-        /* Animation to make them slide in */
+        /* Animation */
         @keyframes slideLeft {
-            0% {
-                transform: translateX(100px);
-                opacity: 0;
-            }
-            100% {
-                transform: translateX(0);
-                opacity: 1;
-            }
+            0% { transform: translateX(100px); opacity: 0; }
+            100% { transform: translateX(0); opacity: 1; }
+        }
+
+        /* --- CSS for Project Link Icon --- */
+        .project-link-icon {
+            color: #0ef;
+            font-size: 1.2rem;
+            margin-left: 12px;
+            transition: transform 0.3s ease, text-shadow 0.3s ease;
+            text-decoration: none;
+        }
+
+        .project-link-icon:hover {
+            transform: scale(1.2);
+            text-shadow: 0 0 10px #0ef;
+            cursor: pointer;
         }
     </style>
 </head>
@@ -78,30 +89,30 @@
 
     <main>
 
+        <!-- HOME SECTION -->
         <section class="firstSection" id="home">
             <div class="leftSection">
                 <h1>Hi, I am <span class="cyan">Tanuja</span>.</h1>
                 <p>A motivated and detail-oriented <b>Java Developer</b> with hands-on experience in backend development.</p>
                 <span id="element"></span>
 
-                <!-- UPDATED: Icons replaced buttons here -->
+                <!-- Social Icons (LinkedIn, GitHub, Resume) -->
                 <div class="social-icons">
                     <!-- LinkedIn -->
-                    <a href="https://www.linkedin.com/in/tanuja-suvarnakar-824602229?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" style="--i:1;">
+                    <a href="https://www.linkedin.com/in/tanuja-suvarnakar-824602229?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" style="--i:1;" title="LinkedIn">
                         <i class="fa-brands fa-linkedin-in"></i>
                     </a>
 
                     <!-- GitHub -->
-                    <a href="https://github.com/tanuja-suvarnakar" target="_blank" style="--i:2;">
+                    <a href="https://github.com/tanuja-suvarnakar" target="_blank" style="--i:2;" title="GitHub">
                         <i class="fa-brands fa-github"></i>
                     </a>
 
-                    <!-- Resume (PDF Icon) -->
+                    <!-- Resume Download -->
                     <a href="https://drive.google.com/file/d/1jPYO2tSZ0e2Z58lAgl0RJZDiB9-pN3j6/view?usp=drivesdk" target="_blank" style="--i:3;" title="Download Resume">
                         <i class="fa-solid fa-file-arrow-down"></i>
                     </a>
                 </div>
-
             </div>
 
             <div class="rightSection">
@@ -111,16 +122,22 @@
 
         <hr>
 
+        <!-- ABOUT SECTION (UPDATED) -->
         <section class="secondSection" id="about">
-            <span class="text-gray">Professional Summary</span>
+            <span class="text-gray">Who I Am</span>
             <h1>About Me</h1>
             <p class="about-text">
-                I am a motivated and detail-oriented <b>Java Developer</b> with 1+ year experience in backend development, RESTful API creation, and AWS deployment using Java, Spring Boot, Hibernate, and Microservices.
+                I am a passionate and results-driven <b>Java Backend Developer</b> with over a year of professional experience in building scalable, high-performance applications. Currently working at <b>Datagateway</b>, I specialize in designing robust backend architectures using <b>Java, Spring Boot, and Microservices</b>.
+                <br><br>
+                My technical expertise lies in developing secure RESTful APIs, managing complex database interactions with <b>Hibernate</b>, and deploying containerized applications on <b>AWS</b>. I have a strong foundation in optimizing code for efficiency, ensuring seamless integration between frontend and backend systems, and maintaining code quality through rigorous testing.
+                <br><br>
+                Beyond coding, I am a continuous learner who thrives in <b>Agile environments</b>. I am eager to tackle new challenges, solve complex logic problems, and translate business requirements into effective technical solutions.
             </p>
         </section>
 
         <hr>
 
+        <!-- SKILLS SECTION -->
         <section class="secondSection" id="skills">
             <span class="text-gray">Core Competencies</span>
             <h1>Technical Skills</h1>
@@ -148,6 +165,7 @@
 
         <hr>
 
+        <!-- EXPERIENCE SECTION -->
         <section class="secondSection" id="experience">
             <span class="text-gray">Where I have worked</span>
             <h1>Work Experience</h1>
@@ -161,25 +179,14 @@
 
                     <div class="vertical-desc">
                         <ul>
-                            <li>Engineered the complete backend for a sales-focused CRM platform, including prospect search, lead
-management, user authentication, activity tracking, and secure data processing using Java and Spring
-Boot.</li>
-                            <li>Built a scalable Email Validation System supporting single and bulk verification, implementing domain
-checks, regex validation, history logs, and performance-optimized API flows.</li>
-                            <li>Developed dedicated Admin Dashboards for CRM and Email Validation platforms to manage users,
-monitor activity, view verification history, track analytics, and handle role-based access.</li>
-                            <li>Created a Chrome Extension to scrape structured LinkedIn profile data, enabling faster lead collection
-and seamless integration with CRM APIs.</li>
-                            <li>Designed and implemented a full HRMS (Employee Management System) where employees can apply
-for leaves, check leave history, view salary/leave balance, and receive automated approval/rejection
-emails. Built a powerful Admin Dashboard allowing HR/admin to add employees, manage leave
-balances, review leave requests, receive email notifications, and approve/reject requests.</li>
-                            <li>Developed a content-driven Micro Website (technology-trends.net) to publish and manage company-
-specific whitepapers. Implemented company listing, whitepaper upload modules, structured metadata
-(headings, summaries), user form submission, and secure document download workflows.</li>
-                            <li>Involved in deploying and maintaining multiple live applications on AWS, ensuring reliability, security,
-and smooth backend operations.</li>
-                          
+                            <li>Engineered backend for CRM platform with lead management, authentication & secure processing.</li>
+                            <li>Built scalable Email Validation System with bulk verification & optimized API flow.</li>
+                            <li>Developed Admin Dashboards for CRM & Email Validation with analytics & role-based access.</li>
+                            <li>Created Chrome Extension for LinkedIn data scraping integrated with CRM API.</li>
+                            <li>Designed HRMS with leave module, salary/leave tracking & automated email workflow.</li>
+                            <li>Developed Admin HR Dashboard for employee & leave management operations.</li>
+                            <li>Created a micro website (technology-trends.net) for whitepaper publishing & secure downloads.</li>
+                            <li>Deployed and maintained multiple live applications on AWS with high reliability.</li>
                         </ul>
                     </div>
                 </div>
@@ -188,6 +195,7 @@ and smooth backend operations.</li>
 
         <hr>
 
+        <!-- PROJECTS SECTION (UPDATED WITH ICON) -->
         <section class="secondSection" id="projects">
             <span class="text-gray">My Practical Work</span>
             <h1>Key Projects</h1>
@@ -195,13 +203,17 @@ and smooth backend operations.</li>
             <div class="box">
                 <div class="vertical">
                     <img class="image-top" src="img.png" alt="Project Icon">
-                    <div class="vertical-title">Task Management & Assignment System</div>
-                    <span class="vertical-subtitle">
-                        <a href="https://tanuja-suvarnakar.github.io/tasklink-frontend/login" target="_blank" style="color:#0ef; text-decoration:underline;">
-                            Live Project Link
+                    
+                    <div class="vertical-title">
+                        Task Management System
+                        <!-- Live Project Icon Button -->
+                        <a href="https://tanuja-suvarnakar.github.io/tasklink-frontend/login" target="_blank" class="project-link-icon" title="View Live Project">
+                            <i class="fa-solid fa-up-right-from-square"></i>
                         </a>
-                    </span>
+                    </div>
 
+                    <!-- Removed text link, now using icon above -->
+                    
                     <div class="vertical-desc">
                         <ul>
                             <li>Developed a full-stack task management system with Angular frontend & Spring Boot backend.</li>
@@ -216,6 +228,7 @@ and smooth backend operations.</li>
 
         <hr>
 
+        <!-- EDUCATION SECTION -->
         <section class="secondSection" id="education">
             <span class="text-gray">My Academic Background</span>
             <h1>Education</h1>
@@ -237,6 +250,7 @@ and smooth backend operations.</li>
 
         <hr>
 
+        <!-- CONTACT SECTION -->
         <section class="secondSection" id="contact">
             <span class="text-gray">Let's Connect</span>
             <h1>Contact Details</h1>
@@ -253,22 +267,19 @@ and smooth backend operations.</li>
                 <strong>Location:</strong> <span class="cyan">Pune</span>
             </p>
 
-             <div class="social-icons">
-                    <!-- LinkedIn -->
-                    <a href="https://www.linkedin.com/in/tanuja-suvarnakar-824602229?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" style="--i:1;">
-                        <i class="fa-brands fa-linkedin-in"></i>
-                    </a>
+            <div class="social-links-container">
+                <a href="https://github.com/tanuja-suvarnakar" target="_blank" class="social-link">
+                    <i class="fab fa-github fa-3x"></i>
+                </a>
 
-                    <!-- GitHub -->
-                    <a href="https://github.com/tanuja-suvarnakar" target="_blank" style="--i:2;">
-                        <i class="fa-brands fa-github"></i>
-                    </a>
-
-                    <!-- Resume (PDF Icon) -->
-                    <a href="https://drive.google.com/file/d/1jPYO2tSZ0e2Z58lAgl0RJZDiB9-pN3j6/view?usp=drivesdk" target="_blank" style="--i:3;" title="Download Resume">
-                        <i class="fa-solid fa-file-arrow-down"></i>
-                    </a>
-                </div>
+                <a href="https://www.linkedin.com/in/tanuja-suvarnakar-824602229?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" class="social-link">
+                    <i class="fab fa-linkedin fa-3x"></i>
+                </a>
+                
+                <a href="https://drive.google.com/file/d/1jPYO2tSZ0e2Z58lAgl0RJZDiB9-pN3j6/view?usp=drivesdk" target="_blank" class="social-link">
+                    <i class="fas fa-file-pdf fa-3x"></i>
+                </a>
+            </div>
 
         </section>
 
@@ -308,5 +319,3 @@ and smooth backend operations.</li>
 </body>
 
 </html>
-
-
