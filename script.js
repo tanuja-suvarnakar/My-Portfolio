@@ -1,5 +1,10 @@
 var typed = new Typed('#element', {
-    strings: ['Java Developer', 'Backend Specialist', 'Spring Boot Enthusiast', 'REST API Builder'],
+    strings: [
+        'Java Backend Developer',
+        'Spring Boot & Microservices',
+        'REST API & SQL Developer',
+        'AWS & Docker Practitioner'
+    ],
     typeSpeed: 50,
     backSpeed: 30,
     loop: true,
